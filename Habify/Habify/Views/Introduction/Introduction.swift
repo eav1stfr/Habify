@@ -1,34 +1,13 @@
 import UIKit
 
+protocol IntroductionViewDelegate: AnyObject {
+    func loginPressed()
+    func createAccountPressed()
+}
+
 final class IntroductionView: UIView {
     
-    enum Constants {
-        enum Colors {
-            static let mainBlue = UIColor(named: "ThemeColor")!
-            static let mainBackground = UIColor(named: "BackgroundColor")!
-        }
-        
-        enum Color {
-            case mainBlue
-            case mainBackgroud
-            
-            var color: UIColor {
-                switch self {
-                case .mainBlue: return UIColor(named: "ThemeColor")!
-                case .mainBackgroud: return UIColor(named: "BackgroundColor")!
-                }
-            }
-        }
-        
-        enum Texts {
-            static let deviz = "Stay focused, stau committed,\n and let Habify guide your personal growth"
-            static let appName = "HABIFY"
-            static let loginText = "Log In"
-            static let createAccountText = "Create an Account"
-            static let termsText = "Terms of Service"
-            static let privacyText = "Privacy Policy"
-        }
-    }
+    weak var delegate: IntroductionViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,7 +28,7 @@ final class IntroductionView: UIView {
         let atrtibutedText = NSMutableAttributedString(string: Constants.Texts.termsText)
         atrtibutedText.addAttributes([
             .underlineStyle: NSUnderlineStyle.single.rawValue,
-            .foregroundColor: Constants.Color.mainBlue.color],
+            .foregroundColor: Constants.Colors.mainBlue],
                                      range: NSRange(location: 0, length: Constants.Texts.termsText.count))
         label.attributedText = atrtibutedText
         label.tag = 0
@@ -66,7 +45,7 @@ final class IntroductionView: UIView {
         let atrtibutedText = NSMutableAttributedString(string: Constants.Texts.privacyText)
         atrtibutedText.addAttributes([
             .underlineStyle: NSUnderlineStyle.single.rawValue,
-            .foregroundColor: Constants.Color.mainBlue.color],
+            .foregroundColor: Constants.Colors.mainBlue],
                                      range: NSRange(location: 0, length: Constants.Texts.privacyText.count))
         label.attributedText = atrtibutedText
         label.tag = 1
@@ -87,13 +66,13 @@ final class IntroductionView: UIView {
     
     @objc
     private func termPressed() {
-        guard let url = URL(string: "https://dictionary.cambridge.org/dictionary/english/privacy") else { return }
+        guard let url = URL(string: Constants.Urls.termsUrl) else { return }
         UIApplication.shared.open(url)
     }
     
     @objc
     private func privacyPressed() {
-        guard let url = URL(string: "https://arc.net/privacy") else { return }
+        guard let url = URL(string: Constants.Urls.privacyUrl) else { return }
         UIApplication.shared.open(url)
     }
     
@@ -142,14 +121,14 @@ final class IntroductionView: UIView {
         let button = LoginRegistrationButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.buttonLabel = Constants.Texts.createAccountText
-        button.buttonColor = Constants.Color.mainBlue.color
+        button.buttonColor = Constants.Colors.mainBlue
         button.tag = 2
         button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         return button
     }()
     
     private func setupView() {
-        self.backgroundColor = Constants.Color.mainBackgroud.color
+        self.backgroundColor = Constants.Colors.mainBackground
         addSubviews()
         setupConstraints()
     }
@@ -199,10 +178,6 @@ final class IntroductionView: UIView {
     
     @objc
     private func loginButtonPressed(_ sender: UIButton) {
-        let user = User(fullName: "alex",
-                        dateOfBirth: "bro",
-                        username: "bro",
-                        password: "hello new world")
         let group = DispatchGroup()
         group.enter()
         UIView.animate(withDuration: 0.1, animations: {
@@ -214,11 +189,11 @@ final class IntroductionView: UIView {
                 group.leave()
             })
         })
-        group.notify(queue: .main) {
+        group.notify(queue: .main) { [self] in
             if sender.tag == 1 {
-                self.presenter?.login(user)
+                delegate?.loginPressed()
             } else {
-                self.presenter?.register(user)
+                delegate?.createAccountPressed()
             }
         }
     }

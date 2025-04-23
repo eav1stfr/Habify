@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF1E75AC2DB901EC00854A39 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1E75AB2DB901EC00854A39 /* LoginView.swift */; };
+		AF1E75AF2DB904FD00854A39 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1E75AE2DB904FD00854A39 /* Constants.swift */; };
+		AF1E75B12DB906DD00854A39 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1E75B02DB906DD00854A39 /* TextField.swift */; };
+		AF323EFB2DB91B91003BD191 /* NetworkServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF323EFA2DB91B91003BD191 /* NetworkServiceProvider.swift */; };
 		AF50BC912DB8050200512A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50BC902DB8050200512A01 /* AppDelegate.swift */; };
 		AF50BC932DB8050200512A01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50BC922DB8050200512A01 /* SceneDelegate.swift */; };
 		AF50BC952DB8050200512A01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50BC942DB8050200512A01 /* ViewController.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF1E75AB2DB901EC00854A39 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AF1E75AE2DB904FD00854A39 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AF1E75B02DB906DD00854A39 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		AF323EFA2DB91B91003BD191 /* NetworkServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProvider.swift; sourceTree = "<group>"; };
 		AF50BC8D2DB8050200512A01 /* Habify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF50BC902DB8050200512A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF50BC922DB8050200512A01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +53,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF1E75A92DB8FFD100854A39 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				AF1E75AB2DB901EC00854A39 /* LoginView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		AF1E75AA2DB8FFD900854A39 /* RegistrationView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RegistrationView;
+			sourceTree = "<group>";
+		};
+		AF1E75AD2DB904F300854A39 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AF1E75AE2DB904FD00854A39 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		AF323EF92DB91B84003BD191 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AF323EFA2DB91B91003BD191 /* NetworkServiceProvider.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		AF50BC842DB8050200512A01 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +103,8 @@
 		AF50BC8F2DB8050200512A01 /* Habify */ = {
 			isa = PBXGroup;
 			children = (
+				AF323EF92DB91B84003BD191 /* Network */,
+				AF1E75AD2DB904F300854A39 /* Constants */,
 				AF50BCB12DB8119A00512A01 /* ReusableComponents */,
 				AF50BCA92DB80DEB00512A01 /* Models */,
 				AF50BCA82DB80DE300512A01 /* Views */,
@@ -90,6 +131,8 @@
 		AF50BCA82DB80DE300512A01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AF1E75AA2DB8FFD900854A39 /* RegistrationView */,
+				AF1E75A92DB8FFD100854A39 /* LoginView */,
 				AF50BCAE2DB8106100512A01 /* Introduction */,
 			);
 			path = Views;
@@ -115,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				AF50BCB22DB811C700512A01 /* LoginRegistrationButton.swift */,
+				AF1E75B02DB906DD00854A39 /* TextField.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -190,9 +234,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF50BCB32DB811C700512A01 /* LoginRegistrationButton.swift in Sources */,
+				AF1E75B12DB906DD00854A39 /* TextField.swift in Sources */,
 				AF50BC952DB8050200512A01 /* ViewController.swift in Sources */,
 				AF50BC912DB8050200512A01 /* AppDelegate.swift in Sources */,
+				AF1E75AC2DB901EC00854A39 /* LoginView.swift in Sources */,
+				AF323EFB2DB91B91003BD191 /* NetworkServiceProvider.swift in Sources */,
 				AF50BC9B2DB8050200512A01 /* Habify.xcdatamodeld in Sources */,
+				AF1E75AF2DB904FD00854A39 /* Constants.swift in Sources */,
 				AF50BC932DB8050200512A01 /* SceneDelegate.swift in Sources */,
 				AF50BCAD2DB80E3500512A01 /* UserModel.swift in Sources */,
 				AF50BCB02DB8106E00512A01 /* Introduction.swift in Sources */,

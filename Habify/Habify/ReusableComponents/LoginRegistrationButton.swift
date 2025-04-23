@@ -31,6 +31,6 @@ final class LoginRegistrationButton: UIButton {
     private func setupButton() {
         self.layer.cornerRadius = 35
         self.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
     }
 }
