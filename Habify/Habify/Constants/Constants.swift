@@ -20,7 +20,13 @@ enum Constants {
         static let privacyText = "Privacy Policy"
         static let dontHaveAccountText = "Don't have an account?"
         static let signUpText = "Sign Up"
+        static let signInText = "Sign In"
         static let orText = "OR"
         static let loginWithGoogle = "Log In with Google"
+        static let alreadyHaveAccText = "Already have an account?"
+        static let usernameTextFieldText = "Username"
+        static let passwordTextFieldText = "Password"
+        static let emailTextField = "Email"
+        static let fullNameTextField = "Full Name"
     }
 }

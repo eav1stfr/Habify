@@ -1,7 +1,7 @@
 import UIKit
 
 protocol LoginViewDelegate: AnyObject {
-    func login()
+    func login(_ username: String, _ password: String)
     func forgotPassword()
     func signUp()
     func loginWithGoogle()
@@ -20,19 +20,15 @@ final class LoginView: UIView {
     
     weak var delegate: LoginViewDelegate?
     
-    private let underlineOne: UIView = {
-        let view = UIView()
+    private let underlineOne: Delimiter = {
+        let view = Delimiter()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Constants.Colors.mainBlue
-        view.heightAnchor.constraint(equalToConstant: 1).isActive = true
         return view
     }()
     
-    private let underlineTwo: UIView = {
-        let view = UIView()
+    private let underlineTwo: Delimiter = {
+        let view = Delimiter()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Constants.Colors.mainBlue
-        view.heightAnchor.constraint(equalToConstant: 1).isActive = true
         return view
     }()
     
@@ -109,18 +105,20 @@ final class LoginView: UIView {
         return button
     }()
     
-    private let usernameField: TextField = {
+    private lazy var usernameField: TextField = {
         let field = TextField()
         field.autocapitalizationType = .none
         field.translatesAutoresizingMaskIntoConstraints = false
+        field.delegate = self
         field.placeholderLabel = "Username"
         return field
     }()
     
-    private let passwordField: TextField = {
+    private lazy var passwordField: TextField = {
         let field = TextField()
         field.translatesAutoresizingMaskIntoConstraints = false
         field.placeholderLabel = "Password"
+        field.delegate = self
         field.isSecureTextEntry = true
         return field
     }()
@@ -184,7 +182,10 @@ final class LoginView: UIView {
         group.notify(queue: .main) { [self] in
             switch sender.tag {
             case 1:
-                delegate?.login()
+                guard let username = usernameField.text else { return }
+                guard let password = passwordField.text else { return }
+                print(username, password)
+                delegate?.login(username, password)
                 break
             case 2:
                 delegate?.loginWithGoogle()
@@ -233,15 +234,15 @@ final class LoginView: UIView {
             
             underlineOne.topAnchor.constraint(equalTo: usernameField.bottomAnchor, constant: 2),
             underlineOne.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            underlineOne.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            underlineOne.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
             
-            passwordField.topAnchor.constraint(equalTo: underlineOne.bottomAnchor, constant: 20),
+            passwordField.topAnchor.constraint(equalTo: underlineOne.bottomAnchor, constant: 25),
             passwordField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
             passwordField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             
             underlineTwo.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 2),
             underlineTwo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            underlineTwo.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            underlineTwo.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
             
             loginButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             loginButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
@@ -261,5 +262,8 @@ final class LoginView: UIView {
 }
 
 extension LoginView: UITextFieldDelegate {
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

@@ -11,6 +11,8 @@
 		AF1E75AF2DB904FD00854A39 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1E75AE2DB904FD00854A39 /* Constants.swift */; };
 		AF1E75B12DB906DD00854A39 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1E75B02DB906DD00854A39 /* TextField.swift */; };
 		AF323EFB2DB91B91003BD191 /* NetworkServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF323EFA2DB91B91003BD191 /* NetworkServiceProvider.swift */; };
+		AF323EFD2DB93B67003BD191 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF323EFC2DB93B67003BD191 /* CreateAccount.swift */; };
+		AF323EFF2DB9458D003BD191 /* Delimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF323EFE2DB9458D003BD191 /* Delimiter.swift */; };
 		AF50BC912DB8050200512A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50BC902DB8050200512A01 /* AppDelegate.swift */; };
 		AF50BC932DB8050200512A01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50BC922DB8050200512A01 /* SceneDelegate.swift */; };
 		AF50BC952DB8050200512A01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50BC942DB8050200512A01 /* ViewController.swift */; };
@@ -21,6 +23,9 @@
 		AF50BCAD2DB80E3500512A01 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50BCAC2DB80E3500512A01 /* UserModel.swift */; };
 		AF50BCB02DB8106E00512A01 /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50BCAF2DB8106D00512A01 /* Introduction.swift */; };
 		AF50BCB32DB811C700512A01 /* LoginRegistrationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50BCB22DB811C700512A01 /* LoginRegistrationButton.swift */; };
+		AF70FAD72DBA0F1D00D91D0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF70FAD62DBA0F1D00D91D0E /* GoogleService-Info.plist */; };
+		AF70FADA2DBA104900D91D0E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = AF70FAD92DBA104900D91D0E /* FirebaseAnalytics */; };
+		AF70FADC2DBA104900D91D0E /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AF70FADB2DBA104900D91D0E /* FirebaseAnalyticsSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,8 @@
 		AF1E75AE2DB904FD00854A39 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AF1E75B02DB906DD00854A39 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		AF323EFA2DB91B91003BD191 /* NetworkServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProvider.swift; sourceTree = "<group>"; };
+		AF323EFC2DB93B67003BD191 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
+		AF323EFE2DB9458D003BD191 /* Delimiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delimiter.swift; sourceTree = "<group>"; };
 		AF50BC8D2DB8050200512A01 /* Habify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF50BC902DB8050200512A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF50BC922DB8050200512A01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +47,7 @@
 		AF50BCAC2DB80E3500512A01 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AF50BCAF2DB8106D00512A01 /* Introduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
 		AF50BCB22DB811C700512A01 /* LoginRegistrationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegistrationButton.swift; sourceTree = "<group>"; };
+		AF70FAD62DBA0F1D00D91D0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF70FADC2DBA104900D91D0E /* FirebaseAnalyticsSwift in Frameworks */,
+				AF70FADA2DBA104900D91D0E /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +74,7 @@
 		AF1E75AA2DB8FFD900854A39 /* RegistrationView */ = {
 			isa = PBXGroup;
 			children = (
+				AF323EFC2DB93B67003BD191 /* CreateAccount.swift */,
 			);
 			path = RegistrationView;
 			sourceTree = "<group>";
@@ -113,6 +124,7 @@
 				AF50BC922DB8050200512A01 /* SceneDelegate.swift */,
 				AF50BC942DB8050200512A01 /* ViewController.swift */,
 				AF50BC9C2DB8050500512A01 /* Assets.xcassets */,
+				AF70FAD62DBA0F1D00D91D0E /* GoogleService-Info.plist */,
 				AF50BC9E2DB8050500512A01 /* LaunchScreen.storyboard */,
 				AF50BCA12DB8050500512A01 /* Info.plist */,
 				AF50BC992DB8050200512A01 /* Habify.xcdatamodeld */,
@@ -159,6 +171,7 @@
 			children = (
 				AF50BCB22DB811C700512A01 /* LoginRegistrationButton.swift */,
 				AF1E75B02DB906DD00854A39 /* TextField.swift */,
+				AF323EFE2DB9458D003BD191 /* Delimiter.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -179,6 +192,10 @@
 			dependencies = (
 			);
 			name = Habify;
+			packageProductDependencies = (
+				AF70FAD92DBA104900D91D0E /* FirebaseAnalytics */,
+				AF70FADB2DBA104900D91D0E /* FirebaseAnalyticsSwift */,
+			);
 			productName = Habify;
 			productReference = AF50BC8D2DB8050200512A01 /* Habify.app */;
 			productType = "com.apple.product-type.application";
@@ -207,6 +224,9 @@
 				Base,
 			);
 			mainGroup = AF50BC842DB8050200512A01;
+			packageReferences = (
+				AF70FAD82DBA104900D91D0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = AF50BC8E2DB8050200512A01 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -223,6 +243,7 @@
 			files = (
 				AF50BCA02DB8050500512A01 /* LaunchScreen.storyboard in Resources */,
 				AF50BC9D2DB8050500512A01 /* Assets.xcassets in Resources */,
+				AF70FAD72DBA0F1D00D91D0E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,12 +258,14 @@
 				AF1E75B12DB906DD00854A39 /* TextField.swift in Sources */,
 				AF50BC952DB8050200512A01 /* ViewController.swift in Sources */,
 				AF50BC912DB8050200512A01 /* AppDelegate.swift in Sources */,
+				AF323EFD2DB93B67003BD191 /* CreateAccount.swift in Sources */,
 				AF1E75AC2DB901EC00854A39 /* LoginView.swift in Sources */,
 				AF323EFB2DB91B91003BD191 /* NetworkServiceProvider.swift in Sources */,
 				AF50BC9B2DB8050200512A01 /* Habify.xcdatamodeld in Sources */,
 				AF1E75AF2DB904FD00854A39 /* Constants.swift in Sources */,
 				AF50BC932DB8050200512A01 /* SceneDelegate.swift in Sources */,
 				AF50BCAD2DB80E3500512A01 /* UserModel.swift in Sources */,
+				AF323EFF2DB9458D003BD191 /* Delimiter.swift in Sources */,
 				AF50BCB02DB8106E00512A01 /* Introduction.swift in Sources */,
 				AF50BCAB2DB80E0200512A01 /* Presenter.swift in Sources */,
 			);
@@ -452,6 +475,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF70FAD82DBA104900D91D0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF70FAD92DBA104900D91D0E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF70FAD82DBA104900D91D0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		AF70FADB2DBA104900D91D0E /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF70FAD82DBA104900D91D0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		AF50BC992DB8050200512A01 /* Habify.xcdatamodeld */ = {

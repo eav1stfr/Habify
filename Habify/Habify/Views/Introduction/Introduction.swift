@@ -17,8 +17,6 @@ final class IntroductionView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    var presenter: PresenterProtocol?
     
     private lazy var termsLabel: UILabel = {
         let label = UILabel()
@@ -84,7 +82,6 @@ final class IntroductionView: UIView {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        
         return label
     }()
     
