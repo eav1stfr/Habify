@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseAnalytics
 
 protocol IntroductionViewDelegate: AnyObject {
     func loginPressed()
@@ -128,6 +129,7 @@ final class IntroductionView: UIView {
         self.backgroundColor = Constants.Colors.mainBackground
         addSubviews()
         setupConstraints()
+        Analytics.logEvent("opened", parameters: nil)
     }
     
     private func addSubviews() {
@@ -175,6 +177,7 @@ final class IntroductionView: UIView {
     
     @objc
     private func loginButtonPressed(_ sender: UIButton) {
+        
         let group = DispatchGroup()
         group.enter()
         UIView.animate(withDuration: 0.1, animations: {
@@ -187,6 +190,10 @@ final class IntroductionView: UIView {
             })
         })
         group.notify(queue: .main) { [self] in
+            Analytics.logEvent("login_pressed", parameters: [
+                "button_name" : "Log In",
+                "screen" : "Introduction View"
+            ])
             if sender.tag == 1 {
                 delegate?.loginPressed()
             } else {
