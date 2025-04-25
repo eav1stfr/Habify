@@ -2,7 +2,7 @@ import Foundation
 
 struct UserToRegister: Codable {
     var fullName: String
-    var dateOfBirth: String
+    var email: String
     var username: String
     var password: String
 }

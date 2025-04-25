@@ -122,8 +122,8 @@ extension ViewController: LoginViewDelegate {
 }
 
 extension ViewController: CreateAccountViewDelegate {
-    func createAccountFromCreateAccountPressed() {
-        
+    func createAccountFromCreateAccountPressed(_ user: UserToRegister) {
+        presenter?.createAccount(user)
     }
     
     func loginFromCreateAccountViewPressed() {

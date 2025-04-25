@@ -1,9 +1,11 @@
 import UIKit
+import FirebaseAuth
 
 protocol PresenterLoginFunctionalityProtocol: AnyObject {
     func login(_ user: User)
     func loginWithGoogle()
     func forgotThePassword()
+    func createAccount(_ user: UserToRegister)
 }
 
 protocol PresenterCreateAccFunctionalityProtocol: AnyObject {
@@ -11,8 +13,25 @@ protocol PresenterCreateAccFunctionalityProtocol: AnyObject {
 }
 
 final class Presenter: PresenterLoginFunctionalityProtocol, PresenterCreateAccFunctionalityProtocol {
+    
+    func createAccount(_ user: UserToRegister) {
+        Auth.auth().createUser(withEmail: user.email, password: user.password) { result, error in
+            if let error = error {
+                print("there was some error creating an account \(error.localizedDescription)")
+            } else {
+                print("User signed up: \(result?.user.email ?? "")")
+            }
+        }
+    }
+    
     func login(_ user: User) {
-        print("login pressed")
+        Auth.auth().signIn(withEmail: user.username, password: user.password) { result, error in
+            if let error = error {
+                print("Sign up error: \(error.localizedDescription)")
+            } else {
+                print("User signed up: \(result?.user.email ?? "")")
+            }
+        }
     }
     
     func register(_ user: UserToRegister) {

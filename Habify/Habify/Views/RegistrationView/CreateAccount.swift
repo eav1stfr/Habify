@@ -1,7 +1,7 @@
 import UIKit
 
 protocol CreateAccountViewDelegate: AnyObject {
-    func createAccountFromCreateAccountPressed()
+    func createAccountFromCreateAccountPressed(_ user: UserToRegister)
     func loginFromCreateAccountViewPressed()
 }
 
@@ -155,7 +155,12 @@ final class CreateAccountView: UIView {
         })
         group.notify(queue: .main) { [self] in
             if sender.tag == 1 {
-                delegate?.createAccountFromCreateAccountPressed()
+                guard let fullname = fullName.text else { return }
+                guard let email = email.text else { return }
+                guard let usernmae = usernameField.text else { return }
+                guard let password = password.text else { return }
+                let user = UserToRegister(fullName: fullname, email: email, username: usernmae, password: password)
+                delegate?.createAccountFromCreateAccountPressed(user)
             } else {
                 delegate?.loginFromCreateAccountViewPressed()
             }
